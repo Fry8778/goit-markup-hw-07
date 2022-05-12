@@ -202,28 +202,6 @@ ul {
   flex-direction: column;
 }
 
-.form-label {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-label-wrap {
-  margin-bottom: 20px;
-}
-
-.form-label:not(:last-child) {
-  margin-bottom: 10px;
-}
-
-.form-text {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.01em;
-  color: var(--primery-text-color);
-  margin-bottom: 4px;
-}
-
 .form-input {
   padding: 12px;
   width: 100%;
@@ -253,12 +231,13 @@ ul {
   color: var(--placeholder-color);
 }
 
-.form-icon-wrap {
-  position: relative;
+.form-label {
+  display: flex;
+  flex-direction: column;
 }
 
-.form-icon-wrap .form-input {
-  padding-left: 40px;
+.form-label:not(:last-child) {
+  margin-bottom: 10px;
 }
 
 .form-icon {
@@ -272,6 +251,52 @@ ul {
 .form-input:hover + .form-icon,
 .form-input:focus + .form-icon {
   fill: var(--accent-color);
+}
+
+.form-icon-check {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-right: 7px;
+  border: 2px solid var(--title-text-color);
+  border-radius: 4px;
+  transition: border var(--transition);
+}
+
+.check-input:focus + .form-icon-check,
+.check-input:hover + .form-icon-check {
+  border: 2px solid var(--accent-color);
+}
+
+.check-input:checked + .form-icon-check {
+  border-color: transparent;
+  background-color: var(--accent-color);
+  background-image: url("../images/last-vector.svg");
+  /* background-size: 11px 8px; */
+  background-origin: border-box;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.form-label-wrap {
+  margin-bottom: 20px;
+}
+
+.form-text {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: var(--primery-text-color);
+  margin-bottom: 4px;
+}
+
+.form-icon-wrap {
+  position: relative;
+}
+
+.form-icon-wrap .form-input {
+  padding-left: 40px;
 }
 
 .check-input {
@@ -320,32 +345,17 @@ ul {
   overflow: hidden;
 }
 
-.form-icon-check {
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-  margin-right: 7px;
-  border: 2px solid var(--title-text-color);
-  border-radius: 4px;
-  transition: border var(--transition);
-}
-
-.check-input:focus + .form-icon-check,
-.check-input:hover + .form-icon-check {
-  border: 2px solid var(--accent-color);
-}
-
-.check-input:checked + .form-icon-check {
-  border-color: transparent;
-  background-color: var(--accent-color);
-  background-image: url("../images/last-vector.svg");
-  /* background-size: 11px 8px; */
-  background-origin: border-box;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
 /*ICON-SPRITE*/
+.contacts__icon {
+  margin-right: 10px;
+  fill: currentColor;
+}
+
+.contacts__icon {
+  margin-right: 10px;
+  fill: currentColor;
+}
+
 .modal {
   position: absolute;
   padding: 40px;
@@ -407,6 +417,11 @@ button[data-modal-close].cross {
   margin-right: 50px;
 }
 
+.nav__list .nav__link:hover,
+.nav__list .nav__link:focus {
+  color: var(--accent-color);
+}
+
 .nav__list .nav__link {
   display: block;
   padding-top: 32px;
@@ -420,17 +435,12 @@ button[data-modal-close].cross {
   transition: color var(--transition);
 }
 
-.nav__list .nav__link:hover,
-.nav__list .nav__link:focus {
-  color: var(--accent-color);
-}
-
-.nav__list .nav__link--current {
+.nav__list .nav__link.nav__link--current {
   color: var(--accent-color);
   position: relative;
 }
 
-.nav__list .nav__link--current::after {
+.nav__list .nav__link.nav__link--current::after {
   content: "";
   display: block;
   width: 100%;
@@ -451,7 +461,11 @@ button[data-modal-close].cross {
   margin-left: 50px;
 }
 
-.contacts .contacts__link {
+.contacts__item:not(:last-child) {
+  margin-right: 50px;
+}
+
+.contacts__link {
   display: flex;
   align-items: center;
   font-weight: 500;
@@ -463,23 +477,8 @@ button[data-modal-close].cross {
   transition: color var(--transition);
 }
 
-.contacts .contacts__link:hover,
-.contacts .lcontacts__link:focus {
+.contacts__link:hover, .contacts__link:focus {
   color: var(--accent-color);
-}
-
-.contacts .contacts__item:not(:last-child) {
-  margin-right: 50px;
-}
-
-.contacts__icon {
-  margin-right: 10px;
-  fill: currentColor;
-}
-
-.contacts__icon {
-  margin-right: 10px;
-  fill: currentColor;
 }
 
 /*Logo*/
@@ -541,9 +540,8 @@ button[data-modal-close].cross {
   transition: background var(--transition);
 }
 
-.icon {
-  fill: var(--icon-fill);
-  transition: fill var(--transition);
+.social-link:hover, .social-link:focus {
+  background: var(--accent-color);
 }
 
 .social-link:hover .icon,
@@ -551,14 +549,13 @@ button[data-modal-close].cross {
   fill: var(--primery-white-color);
 }
 
-.icon:hover,
-.icon:focus {
-  fill: var(--primery-white-color);
+.icon {
+  fill: var(--icon-fill);
+  transition: fill var(--transition);
 }
 
-.social-link:hover,
-.social-link:focus {
-  background: var(--accent-color);
+.icon:hover, .icon:focus {
+  fill: var(--primery-white-color);
 }
 
 .social-item:not(:last-child) {
@@ -718,8 +715,7 @@ button[data-modal-close].cross {
   fill: var(--accent-color);
 }
 
-.part-style:hover,
-.part-style:focus {
+.part-style:hover, .part-style:focus {
   border-color: var(--accent-color);
 }
 
@@ -783,6 +779,10 @@ button[data-modal-close].cross {
   transition: color var(--transition);
 }
 
+.bottom .town:hover, .bottom .town:focus {
+  color: var(--accent-color);
+}
+
 .bottom .link {
   font-style: normal;
   font-weight: 400;
@@ -793,10 +793,7 @@ button[data-modal-close].cross {
   transition: color var(--transition);
 }
 
-.bottom .town:hover,
-.bottom .town:focus,
-.bottom .link:hover,
-.bottom .link:focus {
+.bottom .link:hover, .bottom .link:focus {
   color: var(--accent-color);
 }
 
@@ -850,13 +847,6 @@ button[data-modal-close].cross {
   transition: transform var(--transition), opacity var(--transition), box-shadow var(--transition);
 }
 
-.portfolio__link:hover .portfolio__text,
-.portfolio__link:focus .portfolio__text {
-  transform: translateY(0);
-  opacity: 1;
-  box-shadow: var(--box-shadow-color);
-}
-
 .portfolio__text p {
   font-weight: 400;
   font-size: 18px;
@@ -871,6 +861,13 @@ button[data-modal-close].cross {
 }
 
 .portfolio__link:hover, .portfolio__link:focus {
+  box-shadow: var(--box-shadow-color);
+}
+
+.portfolio__link:hover .portfolio__text,
+.portfolio__link:focus .portfolio__text {
+  transform: translateY(0);
+  opacity: 1;
   box-shadow: var(--box-shadow-color);
 }
 
@@ -934,7 +931,7 @@ button[data-modal-close].cross {
   box-shadow: var(--filter-btn-box-shadow-color);
 }
 
-/*FOOTER subscribe*/
+/*Subscribe*/
 .subscribe-form {
   display: flex;
 }

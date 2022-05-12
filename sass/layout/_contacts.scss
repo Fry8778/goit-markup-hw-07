@@ -15,10 +15,10 @@
 .visitor {
     flex-basis: calc(100% / 6 - 30px);
 
-}
+&:not(:last-child) {
+        margin-right: 30px;
+    }
 
-.visitor:not(:last-child) {
-    margin-right: 30px;
 }
 
 .promo {
@@ -39,17 +39,20 @@
     background-color: var(--primery-white-color);
     transition: background var(--transition);
     transition: border-color var(--transition);
+
+    &:hover .promo,
+    &:focus .promo {
+        fill: var(--accent-color);
+
+
+    }
+
+    &:hover,
+    &:focus {
+        border-color: var(--accent-color);
+
+    }
+
+
 }
 
-.part-style:hover .promo,
-.part-style:focus .promo {
-    fill: var(--accent-color);
-
-
-}
-
-.part-style:hover,
-.part-style:focus {
-    border-color: var(--accent-color);
-
-}

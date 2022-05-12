@@ -17,32 +17,29 @@
     border-radius: 50%;
     background: var(--staff-background-color);
     transition: background var(--transition);
+
+    &:hover,
+    &:focus {
+        background: var(--accent-color);    
+    }
+
+    &:hover .icon,
+    &:focus .icon {
+            fill: var(--primery-white-color)
+        }
+
 }
 
 .icon {
     fill: var(--icon-fill);
     transition: fill var(--transition);
 
-}
-
-.social-link:hover .icon,
-.social-link:focus .icon {
-    fill: var(--primery-white-color)
-}
-
-
-.icon:hover,
-.icon:focus {
-    fill: var(--primery-white-color)
-}
-
-
-.social-link:hover,
-.social-link:focus {
-    background: var(--accent-color);
+    &:hover,
+    &:focus {
+        fill: var(--primery-white-color)
+    }
 
 }
-
 
 .social-item:not(:last-child) {
     margin-right: 10px;

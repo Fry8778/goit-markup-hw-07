@@ -20,13 +20,6 @@
 }
 
 
-.portfolio__link:hover .portfolio__text,
-.portfolio__link:focus .portfolio__text {
-    transform: translateY(0);
-    opacity: 1;
-    box-shadow: var(--box-shadow-color);
-}
-
 .portfolio__text p {  
     font-weight: 400;
     font-size: 18px;
@@ -43,6 +36,14 @@
         &:focus {
             box-shadow: var(--box-shadow-color);
         }
+
+    &:hover .portfolio__text,
+    &:focus .portfolio__text {
+        transform: translateY(0);
+        opacity: 1;
+        box-shadow: var(--box-shadow-color);
+    }
+
 }
 
 

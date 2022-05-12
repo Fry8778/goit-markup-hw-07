@@ -58,6 +58,13 @@
     letter-spacing: 0.03em;
     color: var(--primery-white-color);
     transition: color var(--transition);
+
+
+    &:hover,
+    &:focus,{
+        color: var(--accent-color);
+    }
+
 }
 
 .bottom .link {
@@ -68,11 +75,12 @@
     letter-spacing: 0.03em;
     color: var(--transparent-color);
     transition: color var(--transition);
+
+    &:hover,
+    &:focus {
+        color: var(--accent-color);
+    }
+
 }
 
-.bottom .town:hover,
-.bottom .town:focus,
-.bottom .link:hover,
-.bottom .link:focus {
-    color: var(--accent-color);
-}
+
