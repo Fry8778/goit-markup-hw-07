@@ -39,9 +39,11 @@
 .down-white {
     color: var(--primery-white-color);
     transition: color var(--transition);
+
+
     
-    &:hover,
-    &:focus {
+    .logo-down:hover  &,
+    .logo-down:focus  &{
         color: var(--accent-color);
     }
 }

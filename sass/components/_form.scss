@@ -53,11 +53,19 @@
     transform: translateY(-50%);
     transition: fill var(--transition);
 
+   
+
     .form-input:hover+&,
     .form-input:focus+& {
         fill: var(--accent-color);
     }
 }
+
+ &-icon:hover,
+ &-icon:focus {
+     fill: var(--accent-color);
+}
+
 
 &-icon-check {
     display: inline-block;
@@ -69,8 +77,8 @@
     border-radius: 4px;
     transition: border var(--transition);
 
-    .check-input:focus+&,
-    .check-input:hover+& {
+    .check-input:hover+&,
+    .check-input:focus+& {
         border: 2px solid var(--accent-color);
 
     }
@@ -89,6 +97,11 @@
 }
 
 }
+
+
+
+
+
 
 .form-label-wrap {
     margin-bottom: 20px;

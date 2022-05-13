@@ -253,6 +253,10 @@ ul {
   fill: var(--accent-color);
 }
 
+.form-icon:hover, .form-icon:focus {
+  fill: var(--accent-color);
+}
+
 .form-icon-check {
   display: inline-block;
   width: 15px;
@@ -263,8 +267,8 @@ ul {
   transition: border var(--transition);
 }
 
-.check-input:focus + .form-icon-check,
-.check-input:hover + .form-icon-check {
+.check-input:hover + .form-icon-check,
+.check-input:focus + .form-icon-check {
   border: 2px solid var(--accent-color);
 }
 
@@ -518,7 +522,8 @@ button[data-modal-close].cross {
   transition: color var(--transition);
 }
 
-.down-white:hover, .down-white:focus {
+.logo-down:hover .down-white,
+.logo-down:focus .down-white {
   color: var(--accent-color);
 }
 
